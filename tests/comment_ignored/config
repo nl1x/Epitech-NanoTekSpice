@@ -1,0 +1,10 @@
+.chipsets: # All comments are ignored
+input in1 # Hello world
+input in2#hello 2
+and a
+output out
+# entire line ignored
+.links:
+in1:1 a:1
+in2:1 a:2
+a:3 out:1

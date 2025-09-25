@@ -1,0 +1,317 @@
+.pins:
+1=d0:1         			# Data input 0
+2=d1:1         			# Data input 1
+3=d2:1         			# Data input 2
+4=d3:1         			# Data input 3
+5=d4:1         			# Data input 4
+6=d5:1         			# Data input 5
+7=d6:1         			# Data input 6
+8=unused_8:1  			# UNUSED
+9=d7:1         			# Data input 7
+10=inhibit:1         	# Inhibit input (active high)
+11=a:1       			# Address input A (LSB)
+12=b:1         			# Address input B
+13=c:1         			# Address input C (MSB)
+14=out:2      			# Output
+15=enable:1 			# Input
+
+.chipsets:
+buffer unused_8
+buffer d0
+buffer d1
+buffer d2
+buffer d3
+buffer d4
+buffer d5
+buffer d6
+buffer d7
+buffer enable
+buffer inhibit
+buffer a
+buffer b
+buffer c
+buffer out
+
+# ==========================
+# ===    Final Output    ===
+# ==========================
+
+.chipsets:
+and final_output
+and inhibit_filter
+tristate enable_filter
+
+.links:
+inhibit_filter:3 enable_filter:1
+enable_filter:3 out:1
+
+# ==========================
+# ===  Enable / Inhibit  ===
+# ==========================
+
+.chipsets:
+not invert_enable
+not invert_inhibit
+
+.links:
+inhibit:2 invert_inhibit:1
+invert_inhibit:2 inhibit_filter:2
+
+enable:2 invert_enable:1
+invert_enable:2 enable_filter:2
+
+# ==========================
+# ===     Not a b c      ===
+# ==========================
+
+.chipsets:
+not not_a
+not not_b
+not not_c
+
+.links:
+a:2 not_a:1
+b:2 not_b:1
+c:2 not_c:1
+
+# ==========================
+# ===     Link d0 d1     ===
+# ==========================
+
+.chipsets:
+or d0_or_d1
+
+# ==========================
+# ===       Data 0       ===
+# ==========================
+
+.chipsets:
+and and_a_d0
+and and_b_d0
+and and_c_d0
+
+.links:
+d0:2 and_a_d0:1
+not_a:2 and_a_d0:2
+
+and_a_d0:3 and_b_d0:1
+not_b:2 and_b_d0:2
+
+and_b_d0:3 and_c_d0:1
+not_c:2 and_c_d0:2
+
+and_c_d0:3 d0_or_d1:1
+
+# ==========================
+# ===       Data 1       ===
+# ==========================
+
+.chipsets:
+and and_a_d1
+and and_b_d1
+and and_c_d1
+
+.links:
+d1:2 and_a_d1:1
+a:2 and_a_d1:2
+
+and_a_d1:3 and_b_d1:1
+not_b:2 and_b_d1:2
+
+and_b_d1:3 and_c_d1:1
+not_c:2 and_c_d1:2
+
+and_c_d1:3 d0_or_d1:2
+
+# ==========================
+# ===    Link d0-1 d2    ===
+# ==========================
+
+.chipsets:
+or d01_or_d2
+
+.links:
+d0_or_d1:3 d01_or_d2:2
+
+# ==========================
+# ===       Data 2       ===
+# ==========================
+
+.chipsets:
+and and_a_d2
+and and_b_d2
+and and_c_d2
+
+.links:
+d2:2 and_a_d2:1
+not_a:2 and_a_d2:2
+
+and_a_d2:3 and_b_d2:1
+b:2 and_b_d2:2
+
+and_b_d2:3 and_c_d2:1
+not_c:2 and_c_d2:2
+
+and_c_d2:3 d01_or_d2:1
+
+# ==========================
+# ===    Link d0-2 d3    ===
+# ==========================
+
+.chipsets:
+or d012_or_d3
+
+.links:
+d01_or_d2:3 d012_or_d3:2
+
+# ==========================
+# ===       Data 3       ===
+# ==========================
+
+.chipsets:
+and and_a_d3
+and and_b_d3
+and and_c_d3
+
+.links:
+d3:2 and_a_d3:1
+a:2 and_a_d3:2
+
+and_a_d3:3 and_b_d3:1
+b:2 and_b_d3:2
+
+and_b_d3:3 and_c_d3:1
+not_c:2 and_c_d3:2
+
+and_c_d3:3 d012_or_d3:1
+
+# ==========================
+# ===    Link d0-3 d4    ===
+# ==========================
+
+.chipsets:
+or d0123_or_d4
+
+.links:
+d012_or_d3:3 d0123_or_d4:2
+
+# ==========================
+# ===       Data 4       ===
+# ==========================
+
+.chipsets:
+and and_a_d4
+and and_b_d4
+and and_c_d4
+
+.links:
+d4:2 and_a_d4:1
+not_a:2 and_a_d4:2
+
+and_a_d4:3 and_b_d4:1
+not_b:2 and_b_d4:2
+
+and_b_d4:3 and_c_d4:1
+c:2 and_c_d4:2
+
+and_c_d4:3 d0123_or_d4:1
+
+# ==========================
+# ===    Link d0-4 d5    ===
+# ==========================
+
+.chipsets:
+or d01234_or_d5
+
+.links:
+d0123_or_d4:3 d01234_or_d5:2
+
+# ==========================
+# ===       Data 5       ===
+# ==========================
+
+.chipsets:
+and and_a_d5
+and and_b_d5
+and and_c_d5
+
+.links:
+d5:2 and_a_d5:1
+a:2 and_a_d5:2
+
+and_a_d5:3 and_b_d5:1
+not_b:2 and_b_d5:2
+
+and_b_d5:3 and_c_d5:1
+c:2 and_c_d5:2
+
+and_c_d5:3 d01234_or_d5:1
+
+# ==========================
+# ===    Link d0-5 d6    ===
+# ==========================
+
+.chipsets:
+or d012345_or_d6
+
+.links:
+d01234_or_d5:3 d012345_or_d6:2
+
+# ==========================
+# ===       Data 6       ===
+# ==========================
+
+.chipsets:
+and and_a_d6
+and and_b_d6
+and and_c_d6
+
+.links:
+d6:2 and_a_d6:1
+not_a:2 and_a_d6:2
+
+and_a_d6:3 and_b_d6:1
+b:2 and_b_d6:2
+
+and_b_d6:3 and_c_d6:1
+c:2 and_c_d6:2
+
+and_c_d6:3 d012345_or_d6:1
+
+# ==========================
+# ===    Link d0-6 d7    ===
+# ==========================
+
+.chipsets:
+or d0123456_or_d7
+
+.links:
+d012345_or_d6:3 d0123456_or_d7:2
+
+# ==========================
+# ===       Data 7       ===
+# ==========================
+
+.chipsets:
+and and_a_d7
+and and_b_d7
+and and_c_d7
+
+.links:
+d7:2 and_a_d7:1
+a:2 and_a_d7:2
+
+and_a_d7:3 and_b_d7:1
+b:2 and_b_d7:2
+
+and_b_d7:3 and_c_d7:1
+c:2 and_c_d7:2
+
+and_c_d7:3 d0123456_or_d7:1
+
+# =========================
+# ===    Output data    ===
+# =========================
+
+.links:
+d0123456_or_d7:3 inhibit_filter:1

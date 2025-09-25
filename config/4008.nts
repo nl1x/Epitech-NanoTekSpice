@@ -1,0 +1,66 @@
+.pins:
+1=a4:1				# Input
+2=b3:1				# Input
+3=a3:1				# Input
+4=b2:1				# Input
+5=a2:1				# Input
+6=b1:1				# Input
+7=a1:1				# Input
+8=unused_8:1		# Unused
+9=cin:1				# Input
+10=out_0:2			# Output
+11=out_1:2			# Output
+12=out_2:2			# Output
+13=out_3:2			# Output
+14=cout:2			# Output
+15=b4:1				# Input
+16=unused_16:1		# Unused
+
+.chipsets:
+buffer unused_8
+buffer unused_16
+
+buffer a1
+buffer a2
+buffer a3
+buffer a4
+
+buffer b1
+buffer b2
+buffer b3
+buffer b4
+
+buffer out_3
+buffer out_2
+buffer out_1
+buffer out_0
+
+buffer cin
+buffer cout
+
+fulladder adder_ab1
+fulladder adder_ab2
+fulladder adder_ab3
+fulladder adder_ab4
+
+.links:
+a1:2 adder_ab1:1
+b1:2 adder_ab1:2
+cin:2 adder_ab1:3
+adder_ab1:4 out_0:1
+
+adder_ab1:5 adder_ab2:3
+a2:2 adder_ab2:1
+b2:2 adder_ab2:2
+adder_ab2:4 out_1:1
+
+adder_ab2:5 adder_ab3:3
+a3:2 adder_ab3:1
+b3:2 adder_ab3:2
+adder_ab3:4 out_2:1
+
+adder_ab3:5 adder_ab4:3
+a4:2 adder_ab4:1
+b4:2 adder_ab4:2
+adder_ab4:4 out_3:1
+adder_ab4:5 cout:1

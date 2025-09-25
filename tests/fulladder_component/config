@@ -1,0 +1,14 @@
+.chipsets:
+input a
+input b
+input cin
+fulladder adder
+output s
+output cout
+
+.links:
+a:1 adder:1
+b:1 adder:2
+cin:1 adder:3
+s:1 adder:4
+cout:1 adder:5

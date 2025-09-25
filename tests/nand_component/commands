@@ -1,0 +1,12 @@
+simulate
+display
+in1=1
+in2=0
+simulate
+display
+in1=0
+simulate
+display
+in1=U
+simulate
+display

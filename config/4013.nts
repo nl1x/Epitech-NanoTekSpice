@@ -1,0 +1,55 @@
+# CD4013 - Dual D-type Flip-Flop
+
+.pins:
+1=q1:2        # Q output (FF1)
+2=q1_n:2      # Q̅ output (FF1)
+3=clk1:1      # Clock input (FF1)
+4=rst1:1      # Reset input (FF1)
+5=d1:1        # D input (FF1)
+6=set1:1      # Set input (FF1)
+7=vss:1       # Ground (not used in simulation)
+8=set2:1      # Set input (FF2)
+9=d2:1        # D input (FF2)
+10=rst2:1     # Reset input (FF2)
+11=clk2:1     # Clock input (FF2)
+12=q2_n:2     # Q̅ output (FF2)
+13=q2:2       # Q output (FF2)
+14=vdd:1      # Positive supply (not used in simulation)
+
+.chipsets:
+# Buffers for all pins
+buffer q1
+buffer q1_n
+buffer clk1
+buffer rst1
+buffer d1
+buffer set1
+buffer vss
+buffer set2
+buffer d2
+buffer rst2
+buffer clk2
+buffer q2_n
+buffer q2
+buffer vdd
+
+# The two flip-flop components
+flipflop ff1
+flipflop ff2
+
+.links:
+# First flip-flop (FF1) connections
+d1:2 ff1:5      # Connect D1 to FF1 data input
+clk1:2 ff1:3    # Connect CLK1 to FF1 clock input
+rst1:2 ff1:4    # Connect RST1 to FF1 reset input
+set1:2 ff1:6    # Connect SET1 to FF1 set input
+ff1:1 q1:1      # Connect FF1 Q output to Q1
+ff1:2 q1_n:1    # Connect FF1 Q̅ output to Q1_N
+
+# Second flip-flop (FF2) connections
+d2:2 ff2:5      # Connect D2 to FF2 data input
+clk2:2 ff2:3    # Connect CLK2 to FF2 clock input
+rst2:2 ff2:4    # Connect RST2 to FF2 reset input
+set2:2 ff2:6    # Connect SET2 to FF2 set input
+ff2:1 q2:1      # Connect FF2 Q output to Q2
+ff2:2 q2_n:1    # Connect FF2 Q̅ output to Q2_N

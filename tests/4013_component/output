@@ -1,0 +1,241 @@
+> > > tick: 1
+input(s):
+  clk1: U
+  clk2: U
+  d1: U
+  d2: U
+  rst1: U
+  rst2: U
+  set1: U
+  set2: U
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 0
+  q2_n: 1
+> > > > > > tick: 2
+input(s):
+  clk1: U
+  clk2: U
+  d1: 1
+  d2: U
+  rst1: U
+  rst2: U
+  set1: U
+  set2: U
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 0
+  q2_n: 1
+> > > > > tick: 3
+input(s):
+  clk1: 1
+  clk2: U
+  d1: 1
+  d2: U
+  rst1: U
+  rst2: U
+  set1: U
+  set2: U
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 0
+  q2_n: 1
+> > > > > tick: 4
+input(s):
+  clk1: 1
+  clk2: U
+  d1: 0
+  d2: U
+  rst1: U
+  rst2: U
+  set1: U
+  set2: U
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 0
+  q2_n: 1
+> > > > > tick: 5
+input(s):
+  clk1: 0
+  clk2: U
+  d1: 0
+  d2: U
+  rst1: U
+  rst2: U
+  set1: U
+  set2: U
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 0
+  q2_n: 1
+> > > > > tick: 6
+input(s):
+  clk1: 1
+  clk2: U
+  d1: 0
+  d2: U
+  rst1: U
+  rst2: U
+  set1: U
+  set2: U
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 0
+  q2_n: 1
+> > > > > tick: 7
+input(s):
+  clk1: 1
+  clk2: U
+  d1: 0
+  d2: U
+  rst1: U
+  rst2: U
+  set1: 1
+  set2: U
+output(s):
+  q1: 1
+  q1_n: 0
+  q2: 0
+  q2_n: 1
+> > > > > tick: 8
+input(s):
+  clk1: 1
+  clk2: U
+  d1: 0
+  d2: U
+  rst1: 1
+  rst2: U
+  set1: 1
+  set2: U
+output(s):
+  q1: 1
+  q1_n: 1
+  q2: 0
+  q2_n: 1
+> > > > > tick: 9
+input(s):
+  clk1: 1
+  clk2: U
+  d1: 0
+  d2: U
+  rst1: 1
+  rst2: U
+  set1: 0
+  set2: U
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 0
+  q2_n: 1
+> > > > > tick: 10
+input(s):
+  clk1: 1
+  clk2: U
+  d1: 0
+  d2: U
+  rst1: 0
+  rst2: U
+  set1: 0
+  set2: U
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 0
+  q2_n: 1
+> > > > > > tick: 11
+input(s):
+  clk1: 1
+  clk2: 1
+  d1: 0
+  d2: 1
+  rst1: 0
+  rst2: U
+  set1: 0
+  set2: U
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 0
+  q2_n: 1
+> > > > > > tick: 12
+input(s):
+  clk1: 1
+  clk2: 0
+  d1: 0
+  d2: 0
+  rst1: 0
+  rst2: U
+  set1: 0
+  set2: U
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 0
+  q2_n: 1
+> > > > > tick: 13
+input(s):
+  clk1: 1
+  clk2: 1
+  d1: 0
+  d2: 0
+  rst1: 0
+  rst2: U
+  set1: 0
+  set2: U
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 0
+  q2_n: 1
+> > > > > tick: 14
+input(s):
+  clk1: 1
+  clk2: 1
+  d1: 0
+  d2: 0
+  rst1: 0
+  rst2: U
+  set1: 0
+  set2: 1
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 1
+  q2_n: 0
+> > > > > tick: 15
+input(s):
+  clk1: 1
+  clk2: 1
+  d1: 0
+  d2: 0
+  rst1: 0
+  rst2: 1
+  set1: 0
+  set2: 1
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 1
+  q2_n: 1
+> > > > > > > > > > > > tick: 16
+input(s):
+  clk1: 0
+  clk2: 0
+  d1: 0
+  d2: 0
+  rst1: 0
+  rst2: 0
+  set1: 0
+  set2: 0
+output(s):
+  q1: 0
+  q1_n: 1
+  q2: 1
+  q2_n: 0
+> 

@@ -1,0 +1,53 @@
+.pins:
+1=in_01:1
+2=in_02:1
+3=out_03:2
+4=out_04:2
+5=in_05:1
+6=in_06:1
+7:undefined
+8=in_08:1
+9=in_09:1
+10=out_10:2
+11=out_11:2
+12=in_12:1
+13=in_13:1
+14:undefined
+
+.chipsets:
+buffer in_01
+buffer in_02
+buffer out_03
+buffer out_04
+buffer in_05
+buffer in_06
+buffer unused_07
+buffer in_08
+buffer in_09
+buffer out_10
+buffer out_11
+buffer in_12
+buffer in_13
+buffer unused_14
+
+and and_01
+and and_02
+and and_03
+and and_04
+
+.links:
+in_01:2 and_01:1
+in_02:2 and_01:2
+out_03:1 and_01:3
+
+out_04:1 and_02:3
+in_05:2 and_02:2
+in_06:2 and_02:1
+
+in_08:2 and_03:1
+in_09:2 and_03:2
+out_10:1 and_03:3
+
+out_11:1 and_04:3
+in_12:2 and_04:2
+in_13:2 and_04:1

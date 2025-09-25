@@ -1,0 +1,25 @@
+> > tick: 1
+input(s):
+  in1: U
+  in2: U
+output(s):
+  out: U
+> > > > tick: 2
+input(s):
+  in1: 1
+  in2: 0
+output(s):
+  out: 0
+> > > tick: 3
+input(s):
+  in1: 0
+  in2: 0
+output(s):
+  out: 1
+> > > tick: 4
+input(s):
+  in1: U
+  in2: 0
+output(s):
+  out: U
+> 

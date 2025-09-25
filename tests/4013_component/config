@@ -1,0 +1,38 @@
+# CD4013 - Dual D-type Flip-Flop Test
+
+.chipsets:
+# FF1 inputs and outputs
+input d1
+input clk1
+input rst1
+input set1
+output q1
+output q1_n
+
+# FF2 inputs and outputs
+input d2
+input clk2
+input rst2
+input set2
+output q2
+output q2_n
+
+# The component under test
+4013 dff
+
+.links:
+# First flip-flop connections
+d1:1 dff:5
+clk1:1 dff:3
+rst1:1 dff:4
+set1:1 dff:6
+q1:1 dff:1
+q1_n:1 dff:2
+
+# Second flip-flop connections
+d2:1 dff:9
+clk2:1 dff:11
+rst2:1 dff:10
+set2:1 dff:8
+q2:1 dff:13
+q2_n:1 dff:12

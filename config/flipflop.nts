@@ -1,0 +1,7 @@
+.pins:
+1:output      # Q ouput
+2:output      # Q̄ output (complementary)
+3:input       # clock input
+4:input       # reset input
+5:input       # data input
+6:input       # set input
