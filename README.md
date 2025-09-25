@@ -1,6 +1,6 @@
 # NanoTekSpice
 
-NanoTekSpice est un simulateur de circuits logiques écrit en C++. Il permet de charger des fichiers de configuration de composants logiques, de simuler leur comportement et d'interagir avec eux via une interface en ligne de commande.
+NanoTekSpice est un simulateur de circuits logiques écrit en C++. Il permet de charger des fichiers de configuration de composants logiques, de simuler leur comportement et d'intéragir avec eux via une interface en ligne de commande.
 
 ## Fonctionnalités
 
